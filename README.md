@@ -128,7 +128,9 @@ Pour ce faire le script detect.py (utilisé pour "appliquer" le modele de classi
 **Terminal utilisé : WSL**  
 Install : Windows Powershell admin =>  ```wsl --install```.  
 Pour l'utiliser sur Pycharm : ```Ctrl + Alt + S``` => ```Tools``` => ```Terminal``` => ```Shell path : wsl.exe```
+
 --------------------------------------------------------------
+
 **Méthode getsize() deprecated dans Pillow**  
 ```AttributeError: 'FreeTypeFont' object has no attribute 'getsize'```  
 La méthode getsize() utilisée dans le module utils/plots.py, est dépréciée dans les versions récentes de Pillow.  
@@ -144,7 +146,9 @@ w, h = bbox[2] - bbox[0], bbox[3] - bbox[1]  # width = x2 - x1, height = y2 - y1
 ```
 La méthode getbbox() renvoie les coordonnées de la boîte englobante sous la forme (x1, y1, x2, y2).  
 Pour obtenir la largeur et la hauteur du texte, nous calculons la différence entre les coordonnées x2 et x1 (largeur), et y2 et y1 (hauteur).
+
 --------------------------------------------------------------
+
 **torch.cuda.amp.GradScaler() and torch.cuda.amp.autocast() deprecated**  
 ```torch.cuda.amp.GradScaler(args...) is deprecated. Please use torch.amp.GradScaler('cuda', args...) instead.```
 ```torch.cuda.amp.autocast(args...) is deprecated. Please use torch.amp.autocast('cuda', args...) instead.```
@@ -161,4 +165,11 @@ with torch.cuda.amp.autocast(amp):
 
 # Nouveau code :
 with torch.amp.autocast('cuda', enabled=amp):
+```
+
+```shell
+git add .
+now = `date`
+git commit -m "Update du $now"
+git push origin main
 ```
