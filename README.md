@@ -83,7 +83,7 @@ python train.py \
 --hyp "data/hyps/hyp.scratch-high.yaml" 
 ```
 
-## Application :
+## Detection :
 
 Le script suivant est le lancement du code detect.py classique dans la console :
 ```shell
@@ -97,22 +97,42 @@ python detect.py \
 --view-img \
 --nosave 
 ```
-Pour avoir un meilleur rendu et pouvoir comparer les differents resulats des differents dataset j'ai réaliser un streamlit 
 
-# Application cameras IP via RTSP
+# Application sur un flux vidéo en direct : cameras IP (via RTSP)
 
 Une fois le modèle établit l'objectif était d'appliquer celui-ci à des caméras IP.
 Pour récupérer le flux vidéo des caméras on utilisera le protocole RTSP (Real-Time Streaming Protocol).
 
-Pour ce faire le script detect.py (utilisé pour "appliquer" le modele de classification a une image/video) à été modifié affin de pouvoir s'appliquer à un flux vidéo live comme le RTSP.
+Pour ce faire le script detect.py (utilisé pour "appliquer" le modele de classification a une image/video) à été modifié affin de pouvoir s'appliquer à un flux vidéo live comme le RTSP.  
+L'option ```camera_urls``` a donc été introduite pour permettre le traitement des flux vidéo provenant d'URL (comme des caméras IP).
 
+```python
+def run(weights=ROOT / 'yolo.pt', source=ROOT / 'data/images', camera_urls=None, ...):
+    if camera_urls:
+        source = camera_urls[0]
+    else:
+        source = str(source)
+    ...
+```
+Voir [Rapport_ProjetMagellan_RTSP_CODEC.pdf](Ressources_Rapports/Rapport_ProjetMagellan_RTSP_CODEC.pdf), pour quelques infos supplémentaires.
 
+# Affichage
 
+Pour l'affichage 2 méthodes ont été pensées :
+* **Interface Web :** Une plutôt pour la comparaison et l'étude de résultats des entrainements. 
+* **Environnement Virtuel :** L'autre plutôt pour l'immersion dans le point de vue du drone (affin de mieux observer les alentours voir d'envisager de le piloter).
 
+## Mini Interface Web : Streamlit
 
+L'objectif est d'avoir un apercu clair de ce qui est ou a été réalisé.
+L'interface comprend différents curseurs/boutons afin de régler :
+* Le **modèle** à utiliser.
+* Le **média** sur lequel lancer la détection.
+* La valeur du **seuil de confiance** (filtre les détections en fonction du niveau de confiance attribué à chaque prédiction).
+* S'il faut ou non **enregistrer** les résultats
+* L'affichage des **performances**
 
-
-
+## Réalité virtuelle : Unity
 
 
 
