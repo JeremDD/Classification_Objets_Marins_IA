@@ -1,0 +1,19 @@
+names:
+- Fishing Boat
+- Merchant Ship
+- Military Ship
+- Patrol Boat
+- Sails Boat
+- Submarine
+- Tugboat
+- Yacht
+nc: 8
+roboflow:
+  license: CC BY 4.0
+  project: sea-vessels-dataset
+  url: https://universe.roboflow.com/yehonatan-engel/sea-vessels-dataset/dataset/2
+  version: 2
+  workspace: yehonatan-engel
+test: ../test/images
+train: Sea-Vessels-Dataset-2/train/images
+val: Sea-Vessels-Dataset-2/valid/images
