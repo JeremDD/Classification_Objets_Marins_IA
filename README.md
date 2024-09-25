@@ -106,7 +106,6 @@ Pour récupérer le flux vidéo des caméras on utilisera le protocole RTSP (Rea
 
 Pour ce faire le script detect.py (utilisé pour "appliquer" le modele de classification a une image/video) à été modifié affin de pouvoir s'appliquer à un flux vidéo live comme le RTSP.
 
-test
 
 
 
