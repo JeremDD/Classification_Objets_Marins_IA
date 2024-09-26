@@ -1,3 +1,4 @@
+import os
 import base64
 import sys
 import streamlit as st
@@ -10,7 +11,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 
 # Insérer le chemin YOLOv9
-#sys.path.insert(0, str(Path('yolov9').absolute()))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from yolov9.detect import detect_in_streamlit  # Importer la nouvelle fonction
 
@@ -21,7 +22,8 @@ def get_base64_image(image_path):
     return base64_str
 
 # Chemin vers l'image locale
-image_path = "assets/images/background.png"
+image_path = '../assets/images/background.png'
+
 
 # Convertir l'image en base64
 base64_image = get_base64_image(image_path)
@@ -64,13 +66,13 @@ st.markdown("""
 
 # Chemins vers les poids des modèles
 weights_paths = [
-    'yolov9/weights/gelan-c-det.pt',
-    'yolov9/runs/train/exp/weights/best.pt'
+    '../yolov9/weights/gelan-c-det.pt',
+    '../yolov9/runs/train/Sea-Vessels-Dataset-2/weights/best_striped.pt'
 ]
 
 # Chemins vers les vidéos
 video_paths = [
-    'assets/videos/Videosample1.mp4',
+    '../assets/videos/Videosample1.mp4',
 ]
 
 # Extraction des noms des fichiers pour éviter d'afficher les chemins dans les menus déroulants
