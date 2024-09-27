@@ -1,6 +1,7 @@
 <div align='center'>
     <h1><b> Classification vidéo d'objets marins par intelligence artificielle  </b></h1>
-    <img src='assets/images/picture_cover.webp' width="800"/>
+    <img src='assets/images/picture_cover.webp' width="800"/>  
+
 
 ![Python](https://badgen.net/badge/Python/3.12.3/blue?)
 ![YOLO](https://badgen.net/badge/YOLO/v9/yellow?)
@@ -12,6 +13,24 @@
 ![SteamVR](https://badgen.net/badge/SteamVR/2.7.4/cyan?)
 
 </div>
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [📖 Introduction](#-introduction)
+- [🔧 Implémentation du modele de classification](#-impl%C3%A9mentation-du-modele-de-classification)
+  - [👁️ Installation Yolov9 :](#-installation-yolov9-)
+  - [📚 Installation Datasets :](#-installation-datasets-)
+  - [🏋️‍♂️ Training :](#-training-)
+  - [🔎 Detection :](#-detection-)
+- [▶️ Application sur un flux vidéo en direct : cameras IP (via RTSP)](#-application-sur-un-flux-vid%C3%A9o-en-direct--cameras-ip-via-rtsp)
+- [🖥️ Affichage](#-affichage)
+  - [✨ Mini Interface Web : Streamlit](#-mini-interface-web--streamlit)
+  - [🥽 Réalité virtuelle : Unity](#-r%C3%A9alit%C3%A9-virtuelle--unity)
+- [⚠️ Bugs rencontrés](#-bugs-rencontr%C3%A9s)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 # 📖 Introduction
 
@@ -98,7 +117,7 @@ python detect.py \
 --nosave 
 ```
 
-# 📷 Application sur un flux vidéo en direct : cameras IP (via RTSP)
+# ▶️ Application sur un flux vidéo en direct : cameras IP (via RTSP)
 
 Une fois le modèle établit l'objectif était d'appliquer celui-ci à des caméras IP.
 Pour récupérer le flux vidéo des caméras on utilisera le protocole RTSP (Real-Time Streaming Protocol).
@@ -116,7 +135,7 @@ def run(weights=ROOT / 'yolo.pt', source=ROOT / 'data/images', camera_urls=None,
 ```
 Voir [Rapport_ProjetMagellan_RTSP_CODEC.pdf](Ressources_Rapports/Rapport_ProjetMagellan_RTSP_CODEC.pdf), pour quelques infos supplémentaires.
 
-# ▶️ Affichage
+# 🖥️ Affichage
 
 Pour l'affichage 2 méthodes ont été pensées :
 * **Interface Web :** Une plutôt pour la comparaison et l'étude de résultats des entrainements. 
@@ -143,7 +162,7 @@ L'interface comprend différents curseurs/boutons afin de régler :
 
 
 
-# ❗ Bugs rencontrés
+# ⚠️ Bugs rencontrés
 
 **Terminal utilisé : WSL**  
 Install : Windows Powershell admin =>  ```wsl --install```.  
