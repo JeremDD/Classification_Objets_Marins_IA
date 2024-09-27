@@ -1,6 +1,6 @@
 <div align='center'>
     <h1><b> Classification vidéo d'objets marins par intelligence artificielle  </b></h1>
-    <img src='assets/images/picture_cover.webp' width="553"/>
+    <img src='assets/images/picture_cover.webp' width="800"/>
 
 ![Python](https://badgen.net/badge/Python/3.12.3/blue?)
 ![YOLO](https://badgen.net/badge/YOLO/v9/yellow?)
@@ -13,10 +13,10 @@
 
 </div>
 
-# Introduction
+# 📖 Introduction
 
-# Implémentation du modele de classification
-## Installation Yolov9 :
+# 🔧 Implémentation du modele de classification
+## 👁️ Installation Yolov9 :
 
 Clone du repo Yolov9 :
 ```shell
@@ -41,7 +41,7 @@ mkdir -p yolov9/weights
 wget -P yolov9/weights -q https://github.com/WongKinYiu/yolov9/releases/download/v0.1/gelan-c-det.pt
 ```
 
-## Installation Datasets :
+## 📚 Installation Datasets :
 
 J'ai ici utilisé Roboflow Universe, une plateforme qui regroupe une communauté de plus de 200 000 ensembles de données de vision par ordinateur.  
 
@@ -63,7 +63,7 @@ Lors du choix d'un dataset vérifier que :
 
 **Les datasets sont à installer dans le repertoire yolov9 !**
 
-## Training :
+## 🏋️‍♂️ Training :
 
 Pour la demo un petit dataset simple mais efficace sera utilisé. 
 Il est important de bien choisir/trouver son dataset, cela a été la principale difficulté de ce projet !
@@ -83,7 +83,7 @@ python train.py \
 --hyp "data/hyps/hyp.scratch-high.yaml" 
 ```
 
-## Detection :
+## 🔎 Detection :
 
 Le script suivant est le lancement du code detect.py classique dans la console :
 ```shell
@@ -98,7 +98,7 @@ python detect.py \
 --nosave 
 ```
 
-# Application sur un flux vidéo en direct : cameras IP (via RTSP)
+# 📷 Application sur un flux vidéo en direct : cameras IP (via RTSP)
 
 Une fois le modèle établit l'objectif était d'appliquer celui-ci à des caméras IP.
 Pour récupérer le flux vidéo des caméras on utilisera le protocole RTSP (Real-Time Streaming Protocol).
@@ -116,13 +116,13 @@ def run(weights=ROOT / 'yolo.pt', source=ROOT / 'data/images', camera_urls=None,
 ```
 Voir [Rapport_ProjetMagellan_RTSP_CODEC.pdf](Ressources_Rapports/Rapport_ProjetMagellan_RTSP_CODEC.pdf), pour quelques infos supplémentaires.
 
-# Affichage
+# ▶️ Affichage
 
 Pour l'affichage 2 méthodes ont été pensées :
 * **Interface Web :** Une plutôt pour la comparaison et l'étude de résultats des entrainements. 
 * **Environnement Virtuel :** L'autre plutôt pour l'immersion dans le point de vue du drone (affin de mieux observer les alentours voir d'envisager de le piloter).
 
-## Mini Interface Web : Streamlit
+## ✨ Mini Interface Web : Streamlit
 
 L'objectif est d'avoir un apercu clair de ce qui est ou a été réalisé.
 L'interface comprend différents curseurs/boutons afin de régler :
@@ -132,7 +132,7 @@ L'interface comprend différents curseurs/boutons afin de régler :
 * S'il faut ou non **enregistrer** les résultats
 * L'affichage des **performances**
 
-## Réalité virtuelle : Unity
+## 🥽 Réalité virtuelle : Unity
 
 
 
@@ -143,7 +143,7 @@ L'interface comprend différents curseurs/boutons afin de régler :
 
 
 
-# Bugs rencontrés
+# ❗ Bugs rencontrés
 
 **Terminal utilisé : WSL**  
 Install : Windows Powershell admin =>  ```wsl --install```.  
