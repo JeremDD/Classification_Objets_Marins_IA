@@ -117,12 +117,13 @@ def process_video(video_path, weights_path, confidence_threshold, save_results):
         save_results=save_results
     )
 
-# Fonction pour charger les données de performance du modèle
+## Fonction pour charger les données de performance du modèle
 def load_performance_data(model_path):
     csv_path = Path(model_path).parent.parent / 'results.csv'  # Localisation correcte du fichier CSV
     data = pd.read_csv(csv_path)
     data.columns = data.columns.str.strip()  # Supprimer les espaces superflus dans les noms de colonnes
     return data
+
 
 # Fonction pour tracer les graphiques de performance
 def plot_performance(data):
