@@ -34,6 +34,13 @@
 
 # 📖 Introduction
 
+La classification d’images par l’IA consiste à reconnaître des objets spécifiques dans une nouvelle image à l’aide d’un modèle d’IA entraîné sur un ensemble d’images labellisées.  
+De nombreux modèles de reconnaissance existent actuellement, mais la plupart se contentent d’une classe générale de "bateaux".  
+Une proposition de projet consisterait à utiliser l’apprentissage par transfert pour obtenir un modèle qui classifie plus finement les catégories de bateaux.
+
+Le projet couvrira les sujets suivants : recherche bibliographique pour trouver des bases de données annotées (par exemple Singapore Marine Dataset) et choisir un modèle d’IA (par exemple YoloV5) se renseigner sur l’augmentation des données et l’apprentissage par transfert.   
+Enfin, nous vérifierons que le modèle généralise correctement lors d’essais en mer.
+
 # 🔧 Implémentation du modele de classification
 ## 👁️ Installation Yolov9 :
 
@@ -101,6 +108,11 @@ python train.py \
 --cfg "models/detect/gelan-c.yaml" \
 --hyp "data/hyps/hyp.scratch-high.yaml" 
 ```
+Plusieurs stratégies ont été mis en place : dans un premier temps en reprennant 
+le fichier Gelan-c-det.pt de yolo, par la suite faire un nouvel entrainement 
+sur un dataset d'objets marins, varier les parametres et hyperparametres, faire plusieurs 
+entrainements, appliquer ou non un gel de certaines couches ect…  
+Toutes les possibilités n'ont pas été explorées, chaque datasets a ses propres données/labels.
 
 ## 🔎 Detection :
 
@@ -116,6 +128,9 @@ python detect.py \
 --view-img \
 --nosave 
 ```
+
+Pour ne pas alourdir le repo je ne mets pas tous les datasets sur lesquels j'ai entrainé le modele, mais juste un petit pour montrer le déroulement de l'entrainement ect ...  
+Et dans un dossier les fichiers .pt générés par les meilleurs entrainements dans mon cas : [cool_weights](yolov9/cool_weights)
 
 # ▶️ Application sur un flux vidéo en direct : cameras IP (via RTSP)
 
@@ -153,12 +168,16 @@ L'interface comprend différents curseurs/boutons afin de régler :
 
 ## 🥽 Réalité virtuelle : Unity
 
+Développement d’un environnement 3D où diffuser simultanément plusieurs flux RTSP sur plu-
+sieurs écrans, tout en intégrant cette solution avec un casque de réalité virtuelle (VR).  
+L’objectif final est de mieux pouvoir visualiser les flux vidéo des caméras afin de pourquoi pas
+piloter le drone à l’aide de cet environnement..
 
+<div align='center'>
+    <img src="assets/images/RTSP_Unity.png" width="500">
+</div>
 
-
-
-
-
+Voir [Rapport_ProjetMagellan_UnityVLC_RTSP](Ressources_Rapports/Rapport_ProjetMagellan_UnityVLC_RTSP.pdf), pour quelques infos supplémentaires.
 
 
 
