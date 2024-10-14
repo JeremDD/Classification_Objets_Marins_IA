@@ -227,7 +227,6 @@ with torch.amp.autocast('cuda', enabled=amp):
 
 ```shell
 git add .
-now = `date`
-git commit -m "Update du $now"
+git commit -m "Update"
 git push origin main
 ```

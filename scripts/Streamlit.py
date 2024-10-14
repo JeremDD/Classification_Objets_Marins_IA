@@ -67,7 +67,6 @@ st.markdown("""
 # Chemins vers les poids des modèles
 weights_paths = [
     '../yolov9/weights/gelan-c-det.pt',
-    '../yolov9/runs/train/Sea-Vessels-Dataset-2/weights/best_striped.pt',
     '../yolov9/cool_weights/Ships-1_train1/weights/best.pt'
 
 ]
